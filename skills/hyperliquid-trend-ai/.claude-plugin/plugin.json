@@ -1,0 +1,11 @@
+{
+  "name": "hyperliquid-trend-ai",
+  "description": "AI-powered trend-following trading strategy for Hyperliquid DEX with multi-timeframe analysis",
+  "version": "1.0.0",
+  "author": {
+    "name": "AI Trader",
+    "github": "trader-ai"
+  },
+  "license": "MIT",
+  "keywords": ["hyperliquid", "trading", "strategy", "trend", "ai"]
+}

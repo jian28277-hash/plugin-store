@@ -1,0 +1,11 @@
+{
+  "name": "hyperliquid-v10-trend-ai",
+  "description": "基于Hyperliquid的V10.0趋势跟踪AI策略，多维度评分自动交易",
+  "version": "10.0.0",
+  "author": {
+    "name": "AI Trader",
+    "github": "trader-ai"
+  },
+  "license": "MIT",
+  "keywords": ["hyperliquid", "趋势跟踪", "AI策略", "自动交易", "多维度评分"]
+}

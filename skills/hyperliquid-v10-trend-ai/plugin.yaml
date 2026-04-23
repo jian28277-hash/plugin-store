@@ -1,0 +1,30 @@
+schema_version: 1
+name: hyperliquid-v10-trend-ai
+version: "10.0.0"
+description: "基于Hyperliquid的V10.0趋势跟踪AI策略，多维度评分自动交易"
+author:
+  name: "AI Trader"
+  github: "trader-ai"
+license: MIT
+category: strategy
+tags:
+  - hyperliquid
+  - 趋势跟踪
+  - AI策略
+  - 自动交易
+  - 多维度评分
+
+dependent_plugin:
+  - name: hyperliquid-plugin
+    version: "^1.0.0"
+
+risk_level: advanced
+supported_venues:
+  - hyperliquid
+
+components:
+  skill:
+    dir: "."
+
+api_calls:
+  - "api.hyperliquid.xyz"

@@ -1,0 +1,34 @@
+schema_version: 1
+name: v10-trend-ai-strategy
+version: "10.0.0"
+description: "V10.0全市场趋势跟踪AI策略，多维度评分系统，智能选标自动交易"
+author:
+  name: "AI Trader"
+  github: "trader-ai"
+license: MIT
+category: strategy
+tags:
+  - 趋势跟踪
+  - AI策略
+  - 自动交易
+  - 多维度评分
+  - 风控
+
+dependent_plugin:
+  - name: okx-cex-trade
+    version: "^1.0.0"
+  - name: okx-cex-market
+    version: "^1.0.0"
+  - name: okx-cex-portfolio
+    version: "^1.0.0"
+
+risk_level: advanced
+supported_venues:
+  - okx
+
+components:
+  skill:
+    dir: "."
+
+api_calls:
+  - "www.okx.com"
