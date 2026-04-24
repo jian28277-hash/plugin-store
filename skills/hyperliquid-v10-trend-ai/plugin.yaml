@@ -10,15 +10,15 @@ license: MIT
 category: strategy
 tags:
   - hyperliquid
-  - 趋势跟踪
-  - AI策略
-  - 自动交易
-  - 多维度评分
-  - 动能突破
-  - 动态止损
+  - trend-following
+  - ai-strategy
+  - auto-trading
+  - multi-dimensional-scoring
+  - momentum-breakout
+  - dynamic-stop-loss
 
 dependent_plugin:
-  - name: hyperliquid-plugin
+  - name: hyperliquid
     version: "^1.0.0"
 
 risk_level: advanced
