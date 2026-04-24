@@ -1,10 +1,11 @@
 schema_version: 1
 name: hyperliquid-v10-trend-ai
 version: "10.0.0"
-description: "基于Hyperliquid的V10.0趋势跟踪AI策略，多维度评分自动交易"
+description: "V10.0全市场趋势跟踪AI策略 - 基于Hyperliquid Plugin构建，AI四维度评分系统自动识别趋势行情，智能风控保护本金"
 author:
-  name: "AI Trader"
-  github: "trader-ai"
+  name: "小龙趋势狙击者"
+  github: "jian28277-hash"
+  email: ""
 license: MIT
 category: strategy
 tags:
@@ -13,6 +14,8 @@ tags:
   - AI策略
   - 自动交易
   - 多维度评分
+  - 动能突破
+  - 动态止损
 
 dependent_plugin:
   - name: hyperliquid-plugin
@@ -28,3 +31,61 @@ components:
 
 api_calls:
   - "api.hyperliquid.xyz"
+  - "api.telegram.org"
+
+# 策略配置
+strategy_config:
+  # 核心参数
+  leverage: 10                    # 最大10倍杠杆
+  max_position_pct: 0.10          # 单次保证金占比10%
+  stop_loss_atr_multiplier: 1.5   # 1.5 * ATR止损
+  
+  # 止盈分仓
+  take_profit_levels:
+    - level: 1
+      trigger: 0.02               # 浮盈2%
+      close_pct: 0.30             # 平仓30%
+    - level: 2
+      trigger: 0.04               # 浮盈4%
+      close_pct: 0.30             # 平仓30%
+    - level: 3
+      trigger: 0.06               # 浮盈6%
+      close_pct: 0.40             # 平仓40%（移动止损）
+  
+  # 风控限制
+  max_positions: 2                # 最多2持仓
+  max_daily_trades: 3             # 日限3笔
+  min_balance_usd: 50             # 余额<50U停止
+  
+  # 交易标的
+  trading_pairs:
+    - BTC
+    - ETH
+    - SOL
+    - XRP
+    - DOGE
+    - ADA
+    - LINK
+    - LTC
+  
+  # 时间框架
+  signal_timeframe: "15m"         # 15分钟信号
+  trend_timeframe: "1h"           # 1小时趋势
+  
+  # AI评分权重
+  ai_weights:
+    trend: 0.40                   # 趋势40%
+    momentum: 0.25                # 动量25%
+    breakout: 0.30                # 突破30%
+    volatility: 0.05              # 波动率5%
+  
+  # 信号阈值
+  min_signal_score: 70            # 70分以上开仓
+  
+  # 通知配置
+  notifications:
+    enabled: true
+    telegram: true
+    on_trade: true
+    on_stop_loss: true
+    on_take_profit: true
