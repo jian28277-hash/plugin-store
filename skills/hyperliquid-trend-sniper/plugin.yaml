@@ -1,0 +1,71 @@
+schema_version: 1
+name: hyperliquid-trend-sniper
+version: "1.0.0"
+description: "基于Hyperliquid的反人性趋势狙击策略，利用资金费率极端值进行反向交易，内置三段式阶梯止盈与严格风控"
+author:
+  name: "小龙趋势狙击者"
+  github: "jian28277-hash"
+license: MIT
+category: strategy
+tags:
+  - hyperliquid
+  - trend-sniper
+  - contrarian
+  - funding-rate
+  - automatic-trading
+
+dependent_plugin:
+  - name: hyperliquid
+    version: "^1.0.0"
+
+risk_level: advanced
+supported_venues:
+  - hyperliquid
+
+components:
+  skill:
+    dir: "."
+
+api_calls:
+  - "api.hyperliquid.xyz"
+
+# 策略配置
+strategy_config:
+  # 核心参数
+  leverage: 10
+  max_risk_per_trade: 0.05
+  stop_loss_pct: 0.02
+  
+  # 止盈阶梯
+  take_profit_levels:
+    - level: 1
+      trigger: 0.02
+      close_pct: 0.30
+    - level: 2
+      trigger: 0.04
+      close_pct: 0.30
+    - level: 3
+      trigger: 0.06
+      close_pct: 0.40
+  
+  # 风控限制
+  max_positions: 2
+  max_daily_trades: 3
+  min_balance_usd: 10
+  
+  # 交易标的
+  trading_pairs:
+    - BTC
+    - ETH
+    - SOL
+  
+  # 信号阈值
+  funding_threshold: 0.0005
+  min_signal_score: 70
+  
+  # 通知配置
+  notifications:
+    enabled: true
+    on_trade: true
+    on_stop_loss: true
+    on_take_profit: true
