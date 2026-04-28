@@ -1,0 +1,41 @@
+schema_version: 1
+name: hype-grid-strategy
+version: "1.0.0"
+description: "HYPE 高频网格交易策略 - 基于 Hyperliquid Plugin 的自动化交易机器人"
+author: "韭菜"
+author_telegram: "@lvjwrogm"
+author_email: "jian28277@gmail.com"
+strategy_id: "hype-grid-v1"
+based_on: "Hyperliquid Plugin"
+plugin_version: "0.3.9"
+onchainos_version: "2.5.0"
+wallet_address: "0x3af180895d91ecd778585dbadf37f196ca89e3c1"
+competition: "Plugin Store DApp Heat Competition"
+competition_period: "2026.04.23 - 2026.05.07"
+
+# 策略参数
+parameters:
+  coin: "HYPE"
+  grid_spacing: "2%"
+  order_size: "0.25"
+  leverage: "10x"
+  margin_type: "cross"
+  price_range:
+    min: "36.00"
+    max: "45.00"
+
+# 风险等级
+risk_level: "high"
+
+# 标签
+tags:
+  - "grid-trading"
+  - "high-frequency"
+  - "HYPE"
+  - "hyperliquid"
+  - "competition"
+
+# 依赖
+dependencies:
+  - "okx/hyperliquid-plugin"
+  - "okx/onchainos"
