@@ -354,6 +354,16 @@
       }
     },
     {
+      "name": "hype-grid-strategy",
+      "description": "HYPE high-frequency grid trading strategy based on Hyperliquid Plugin -- automated grid trading with 2% spacing, 10x leverage, and competition compliance",
+      "source": "./skills/hype-grid-strategy",
+      "category": "trading-strategy",
+      "author": {
+        "name": "韭菜",
+        "telegram": "@lvjwrogm"
+      }
+    },
+    {
       "name": "velodrome-v2",
       "description": "Swap tokens and manage classic AMM (volatile/stable) LP positions on Velodrome V2 on Optimism",
       "source": "./skills/velodrome-v2-plugin",
